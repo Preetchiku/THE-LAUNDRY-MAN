@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/df764373a8.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Laundry Services - Dark Theme</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Luxurious dark theme with cyan accents */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+        }
+
+       header {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+    background-color: #1c1c1c; /* Header background color */
+    color: #00bcd4; /* Changed to cyan */
+    padding: 20px;
+    border-bottom: 2px solid #00bcd4; /* Changed to cyan */
+    position: fixed; /* Fixed position */
+    z-index: 1000; /* Ensure it stays above other content */
+    top: 0; /* Aligns the header to the top */
+    left: 0; /* Aligns the header to the left */
+    width: 100%; /* Full width */
+}
+
+nav ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+    margin-left: auto; /* Pushes the nav items to the right */
+}
+
+nav ul li {
+    display: inline; /* Aligns menu items in a row */
+    margin-right: 20px; /* Spacing between menu items */
+}
+
+nav ul li a {
+    color: #00bcd4; /* Link color */
+    text-decoration: none; /* Remove underline */
+    font-size: 18px; /* Font size for links */
+    transition: color 0.3s ease; /* Smooth transition on hover */
+}
+
+nav ul li a:hover {
+    color: #ffffff; /* Change color on hover */
+}
+
+        section {
+            padding: 60px 20px;
+            text-align: center;
+            min-height: 100vh;
+            margin-top: 50px;
+            background-color: #181818;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            margin: 30px 50px;
+        }
+
+        #home {
+            background-color: #1b1b1b;
+            display: flex;
+            align-items: center; /* Center items vertically */
+            justify-content: space-between; /* Space between text and image */
+        }
+
+        #aboutus {
+            background-color: #1c1c1c;
+        }
+
+        #services {
+            background-color: #1d1d1d;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 40px 20px;
+        }
+
+        #booking {
+            background-color: #2b2b2b;
+            padding: 50px 30px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+            margin: 50px auto;
+            max-width: 700px;
+        }
+
+        .booking-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .booking-header h2 {
+            font-size: 36px;
+            color: #00bcd4; /* Changed to cyan */
+            margin-bottom: 20px;
+        }
+
+        .booking-header p {
+            color: #e0e0e0;
+            margin-bottom: 40px;
+            font-size: 18px;
+        }
+
+        .booking-form {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            color: #00bcd4; /* Changed to cyan */
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 5px;
+            background-color: #1c1c1c;
+            border: 1px solid #00bcd4; /* Changed to cyan */
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .form-group input::placeholder {
+            color: #ccc;
+        }
+
+        .submit-button {
+            padding: 15px 20px;
+            background-color: #00bcd4; /* Changed to cyan */
+            color: #1c1c1c;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-button:hover {
+            background-color: #0097a7; /* Darker cyan on hover */
+        }
+
+        .confirmation-message {
+            background-color: #1c1c1c;
+            color: #e0e0e0;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        .confirmation-message h3 {
+            color: #00bcd4; /* Changed to cyan */
+        }
+
+        #aboutus h3 {
+            font-size: 28px;
+            font-weight: 600;
+            color: #00bcd4; /* Changed to cyan */
+            margin: 20px 0 10px;
+        }
+
+        #aboutus p {
+            font-size: 16px; 
+            line-height: 1.8;
+            color: #d0d0d0; 
+            max-width: 800px; 
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+  .carousel img {
+    width: 80%;
+    height: auto;
+    border: 5px solid #00bcd4; /* Cyan border for images */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+    transition: opacity 1s ease;
+    display: none; /* Ensure that only the active image is displayed */
+}
+
+.carousel img.active {
+    display: block; /* Show only the active image */
+}
+
+        .service-card {
+            background-color: #2b2b2b;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+			border: 3px solid #00bcd4; /* Cyan border for service cards */
+    border-radius: 10px; /* Rounded corners for service cards */
+        }
+
+        .service-card:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #1c1c1c;
+            color: #00bcd4; /* Changed to cyan */
+            text-align: center;
+            padding: 20px 0;
+            border-top: 2px solid #00bcd4; /* Changed to cyan */
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .whatsapp-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            padding: 15px;
+            font-size: 30px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+            z-index: 1000;
+        }
+
+        .whatsapp-icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Adjustments for scroll behavior with fixed header */
+        #aboutus, #services, #booking, #contact {
+            scroll-margin-top: 100px; /* Offset based on the fixed header height */
+        }
+
+        .contact-info {
+            text-align: left;
+            margin-right: 20px;
+        }
+
+        .map {
+            width: 100%;
+            height: 300px; /* Adjust height as needed */
+            border: none;
+        }
+
+        .contact-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-top: 20px;
+        }
+#services {
+    scroll-margin-top: 150px; /* Adjust this value according to your header height */
+    background-color: rgba(43, 43, 43, 0.8); /* Add a semi-transparent background for better text visibility */
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+    background-size: cover; /* Ensure the background image covers the whole card */
+    background-position: center; /* Center the background image */
+    color: black; /* Change text color to white for better visibility */
+	font-weight: bold;
+	.service-card h3 {
+    font-weight: bold; /* Make the font bold */
+    font-size: 24px; /* Change font size as needed */
+    text-align: center; /* Center align the text */
+    margin-bottom: 10px; /* Space between the title and description */
+	fount-colour:#00bcd4;
+}
+
+.service-card p {
+    text-align: center; /* Center align the description text */
+    font-size: 16px; /* Change font size as needed */
+    color: #00bcd4; /* Change color for better visibility */
+}
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Header and Navigation -->
+    <header>
+    <img src="logo2.jpg" alt="Logo" style="height: 100px; margin-right: 10px; vertical-align: middle;">
+    <h1 style="font-weight: bold; display: inline;">THE LAUNDRY MAN</h1>
+    <nav style="display: inline;margin-left: 450px">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#aboutus">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#booking">Booking</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <!-- Home Section -->
+    <section id="home">
+    <div style="flex: 1; text-align: left;">
+        <h2 style="color: #00bcd4; font-weight: bold;">Our Premium Laundry Services</h2>
+        <p>"Experience the finest in laundry services where cleanliness meets luxury. We take pride in offering services tailored to your needs, ensuring you receive the best care for your garments."</p>
+        <ul style="list-style-type: none; padding: 0; color: #d0d0d0;">
+            <li>✔️ Eco-Friendly Products</li>
+            <li>✔️ Fast and Reliable Service</li>
+            <li>✔️ Affordable Pricing</li>
+            <li>✔️ Customer Satisfaction Guaranteed</li>
+        </ul>
+
+        <h3 style="color: #00bcd4; font-weight: bold;">Ready to Get Started?</h3>
+        <p>Experience the luxury of our laundry services today! <a href="#booking" style="color: #00bcd4; font-weight: bold;">Book Now</a> and let us take care of the rest.</p>
+    </div>
+
+    <div style="flex: 1; padding: 20px;">
+        <div class="carousel">
+            <img src="o1.png" alt="Laundry Service 1" class="active">
+            <img src="o2.jpg" alt="Laundry Service 2">
+            <img src="o3.png" alt="Laundry Service 3">
+            <img src="o4.jpg" alt="Laundry Service 4">
+        </div>
+    </div>
+	
+</section>
+
+
+    <section id="aboutus">
+        <h2 style="color: #00bcd4; font-weight: bold;">Who We Are</h2>
+        <h3>Our Mission</h3>
+        <p>At THE Laundry MAN, we are committed to providing top-quality laundry services with a focus on customer satisfaction. Our mission is to deliver unparalleled service, ensuring your garments receive the best care possible.</p>
+        <h3>Our Values</h3>
+        <p>We believe in quality, reliability, and attention to detail. Our team works tirelessly to meet and exceed our customers' expectations.</p>
+    </section>
+
+   <section id="services" style="padding-top: 50px;">
+    <h2 style="color: #00bcd4; font-weight: bold; text-align: center;">Our Services</h2>
+    
+    <div class="service-card" style="background-image: url('L1.jpg'); background-size: cover; padding: 20px; color: #black ;">
+        <h3>Steam Press</h3>
+        <ul style="list-style-type: none; padding: 0; text-align: center;color: #black;">
+            <li>✔️ Provides a crisp and polished finish.</li>
+            <li>✔️ Removes stubborn wrinkles efficiently.</li>
+        </ul>
+    </div>
+    
+    <div class="service-card" style="background-image: url('Dry.png'); background-size: cover; padding: 20px; color: black;">
+        <h3>Dry Cleaning</h3>
+        <ul style="list-style-type: none; padding: 0; text-align: center;color: #black;">
+            <li>✔️ Uses eco-friendly solvents for delicate fabrics.</li>
+            <li>✔️ Protects garment color and texture.</li>
+        </ul>
+    </div>
+    
+    <div class="service-card" style="background-image: url('s.jpg'); background-size: cover; padding: 20px; color: black;">
+        <h3>Shoe Cleaning</h3>
+        <ul style="list-style-type: none; padding: 0; text-align: ;color: #black;">
+            <li>✔️ Deep cleaning for all types of footwear.</li>
+            <li>✔️ Restoration of shine and condition.</li>
+        </ul>
+    </div>
+    
+    <div class="service-card" style="background-image: url('e.png'); background-size: cover; padding: 20px; color: black;">
+        <h3>Accessories Cleaning</h3>
+        <ul style="list-style-type: none; padding: 0; text-align: center;color: #black;">
+            <li>✔️ Gentle cleaning for bags, ties, and more.</li>
+            <li>✔️ Maintains quality and durability.</li>
+        </ul>
+    </div>
+    
+    <div class="service-card" style="background-image: url('pw.png'); background-size: cover; padding: 20px; color: black;">
+        <h3>Premium Wash</h3>
+        <ul style="list-style-type: none; padding: 0; text-align: center;color: #black;">
+            <li>✔️ Tailored wash for high-end fabrics.</li>
+            <li>✔️ Extra care for luxury items.</li>
+        </ul>
+    </div>
+    
+    <div class="service-card" style="background-image: url('rw.png'); background-size: cover; padding: 20px; color: black;">
+        <h3>Regular Wash</h3>
+        <ul style="list-style-type: none; padding: 0; text-align: center;color: #black;">
+            <li>✔️ Efficient cleaning for everyday wear.</li>
+            <li>✔️ Affordable and reliable service.</li>
+        </ul>
+    </div>
+</section>
+
+    <!-- Booking Section -->
+    <section id="booking">
+        <div class="booking-container">
+            <div class="booking-header">
+                <h2>Book a Service</h2>
+                <p>Ready to experience the finest laundry service? Book an appointment today.</p>
+            </div>
+            <form class="booking-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="Your Phone Number" required>
+                </div>
+                <div class="form-group">
+                    <label for="service">Choose a Service</label>
+                    <select id="service" required>
+                        <option value="">Select a Service</option>
+                        <option value="Standard Laundry">Standard Laundry</option>
+                        <option value="Dry Cleaning">Dry Cleaning</option>
+                        <option value="Premium Wash">Premium Wash</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="date">Preferred Date</label>
+                    <input type="date" id="date" required>
+                </div>
+                <button type="submit" class="submit-button">Submit</button>
+            </form>
+            <div class="confirmation-message" style="display:none;">
+                <h3>Thank you for booking with us!</h3>
+                <p>We will contact you shortly to confirm your appointment.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 style="color: #00bcd4; font-weight: bold;">Contact Us</h2>
+        <p>We are here to assist you. Reach out to us through our phone or email, and we will be happy to help.</p>
+        <p><i class="fa-solid fa-phone"></i> +1234567890</p>
+        <p><i class="fa-solid fa-envelope"></i> info@laundryman.com</p>
+        <h3>Follow Us</h3>
+        <p>Stay connected with us on social media:</p>
+        <p>
+            <a href="https://www.facebook.com/laundryman" style="color: #00bcd4;">Facebook</a> | 
+            <a href="https://www.instagram.com/laundryman" style="color: #00bcd4;">Instagram</a> | 
+            <a href="https://www.twitter.com/laundryman" style="color: #00bcd4;">Twitter</a>
+        </p>
+
+        <div class="contact-details">
+            <div class="contact-info">
+                <h3>Visit Us</h3>
+                <p>123 Laundry St, Clean City, CL 45678</p>
+                <h3>Business Hours</h3>
+                <p>Mon - Fri: 8 AM - 8 PM</p>
+                <p>Sat - Sun: 10 AM - 6 PM</p>
+            </div>
+            <iframe 
+                class="map" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.1384743120384!2d-122.41941568467618!3d37.77492927975979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808c8e69df35%3A0x7d0a951a40deaf9f!2sSan%20Francisco%2C%20CA%2094103%2C%20USA!5e0!3m2!1sen!2sin!4v1635504520674!5m2!1sen!2sin" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+    </section>
+
+    <!-- WhatsApp Icon -->
+    <a href="https://wa.me/1234567890" class="whatsapp-icon" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 THE LAUNDRY MAN. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelector('.booking-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.querySelector('.confirmation-message').style.display = 'block';
+            this.reset(); // Clear the form
+        });
+
+        // Carousel functionality
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.carousel img');
+        const totalImages = images.length;
+
+        function showNextImage() {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % totalImages;
+            images[currentIndex].classList.add('active');
+        }
+
+        setInterval(showNextImage, 3000); // Change image every 3 seconds
+    </script>
+</body>
+</html>
